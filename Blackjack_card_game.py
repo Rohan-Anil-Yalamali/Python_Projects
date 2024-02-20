@@ -81,11 +81,7 @@ def take_bet():
     while True:
         try:
             ask_bet = int(input("How much are you willing to bet i.e 50 or 100: "))
-            if chip.total == 0:
-                print("you don't have minimum chips to place another bet")
-                print(f"Available chips: {chip.total}")
-                break
-            elif chip.total < ask_bet:
+            if chip.total < ask_bet:
                 print("you don't have enough chips")
                 print(f"Available chips: {chip.total}")
                 continue
@@ -282,7 +278,6 @@ while True:
         continue
     else:
         break
-
 
 
 
