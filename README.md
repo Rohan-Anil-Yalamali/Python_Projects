@@ -3,7 +3,7 @@ I have completed two projects namely Tic Tac Toe game and Blackjack card game wh
 
 Tic Tac Toe game
 <br>
-Tic Tac Toe is a simple yet engaging two-player game played on a 3x3 grid. The grid is typically drawn on paper or displayed electronically. Each player takes turns marking an empty cell in the grid, with one player using "X" and the other using "O". The objective of the game is to be the first to place three of their marks (X's or O's) in a horizontal, vertical, or diagonal row. I completed this project using my knowledge on Python Data Types, Loops and Functions.
+Tic Tac Toe is a simple yet engaging two-player game played on a 3x3 grid. The grid is displayed electronically. Each player takes turns marking an empty cell in the grid, with one player using "X" and the other using "O". The objective of the game is to be the first to place three of their marks (X's or O's) in a horizontal, vertical, or diagonal row. I completed this project using my knowledge on Python Data Types, Loops and Functions.
 
 Blackjack card game
 <br>
