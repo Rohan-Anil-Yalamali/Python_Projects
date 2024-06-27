@@ -49,7 +49,7 @@ def place_marker(board, marker):
                     already_placed = True
             else:
                 print('\n')
-                print("You are out of the range i.e. (0-9)")
+                print("You are out of the range i.e. (1-9)")
                 print('\n')
                 within_range = False
     board[int(position)] = marker
