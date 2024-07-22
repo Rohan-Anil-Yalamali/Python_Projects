@@ -83,6 +83,7 @@ def take_bet():
                 print('\n')
                 continue
         except:
+            print('\n')
             print("That is not a number. Please enter a digit")
             print('\n')
             continue
@@ -293,7 +294,6 @@ while True:
         continue
     else:
         break
-
 
 
 
