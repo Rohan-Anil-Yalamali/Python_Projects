@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Created on Sat Dec 16 19:55:39 2023
 
@@ -40,9 +39,6 @@ class Deck:
     def deal_one(self): 
         return self.deck.pop()
         
-    def __str__(self):
-        return f'The deck has {len(self.deck)} cards'
-
 class Hand:
     def __init__(self):
         self.cards = []  # start with an empty list as we did in the Deck class
@@ -51,9 +47,6 @@ class Hand:
     def add_card(self,card):
         return self.cards.append(card)
         
-    def __str__(self):
-        return f'The hand has {len(self.cards)} cards'
-
 class Chips:
     def __init__(self):
         self.total = 100  # This can be set to a default value or supplied by a user input
@@ -294,6 +287,9 @@ while True:
         continue
     else:
         break
+
+
+
 
 
 
