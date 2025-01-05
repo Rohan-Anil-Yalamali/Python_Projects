@@ -233,7 +233,7 @@ while True:
         show_some(human_player, computer_dealer)
     
     # If Player hasn't busted, play Dealer's hand until Dealer reaches 17
-    if human_player.value < 21 and player_busts() == False:
+    if player_busts() == False:
         while computer_dealer.value < 17:
             dealer_hit(test_deck, computer_dealer)
 
