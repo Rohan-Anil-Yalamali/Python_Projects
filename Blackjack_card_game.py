@@ -211,71 +211,72 @@ while True:
     
     while playing:  # recall this variable from the hit_or_stand function
         
+        # If player's hand reaches 21, break out of the loop
+        if human_player.value == 21:
+            playing = False
+            break
+
         # Prompt for Player to Hit or Stand
         hit_or_stand(test_deck, human_player)
         
+        # If player's hand reaches 21, break out of the loop
+        if human_player.value == 21:
+            playing = False
+            break
+        
+        # If player's hand exceeds 21, run player_busts() and break out of the loop
+        if player_busts():
+            playing = False
+            break
+        
         # Show cards (but keep one dealer card hidden)
         show_some(human_player, computer_dealer)
+    
+    # If Player hasn't busted, play Dealer's hand until Dealer reaches 17
+    if human_player.value < 21 and player_busts() == False:
+        while computer_dealer.value < 17:
+            dealer_hit(test_deck, computer_dealer)
+
+    # Run different winning scenarios
+    if tie():
+        chip.win_bet()
+        print("It's a tie")
+        print('\n')
+        show_all(human_player, computer_dealer)
         
-        # If player's hand exceeds 21, run player_busts()
-        if player_busts():
-            break
-        else:
-            pass
-    # If player's hand exceeds 21, run player_busts() and break out of the loop
-    if player_busts():
+    elif player_busts():
         chip.lose_bet()
         print("Player got busted")
-        print(f"Player's card value: {human_player.value}")
         print('\n')
         print("Dealer won")
         print('\n')
-    else:
-        pass
-    
-        # If Player hasn't busted, play Dealer's hand until Dealer reaches 17
-        while computer_dealer.value < 17:
-            dealer_hit(test_deck, computer_dealer)
-        
-        # Show all cards
         show_all(human_player, computer_dealer)
-        
-        # Run different winning scenarios
-        if tie():
-            chip.win_bet()
-            print("It's a tie")
-            print('\n')
-        
-        elif dealer_busts():
-            chip.win_bet()
-            print("Dealer got busted")
-            print(f"Dealer's card value: {computer_dealer.value}")
-            print('\n')
-            print("Player won")
-            print(f"Player's card value: {human_player.value}")
-            print('\n')
+    
+    elif dealer_busts():
+        chip.win_bet()
+        print("Dealer got busted")
+        print('\n')
+        print("Player won")
+        print('\n')
+        show_all(human_player, computer_dealer)
 
-        elif player_wins():
-            chip.win_bet()
-            print("Player won")
-            print('\n')
-            print(f"Player's card value: {human_player.value}")
-            print(f"Dealer's card value: {computer_dealer.value}")
-            print('\n')
+    elif player_wins():
+        chip.win_bet()
+        print("Player won")
+        print('\n')
+        show_all(human_player, computer_dealer)
 
-        elif dealer_wins():
-            chip.lose_bet()
-            print("Dealer won")
-            print('\n')
-            print(f"Dealer's card value: {computer_dealer.value}")
-            print(f"Player's card value: {human_player.value}")
-            print('\n')
+    elif dealer_wins():
+        chip.lose_bet()
+        print("Dealer won")
+        print('\n')
+        show_all(human_player, computer_dealer)
 
     # Inform Player of their chips total 
     print(f"Available chips: {chip.total}")
     print('\n')
 
-    #If player doesn't have minimum chips to bet, break out of the loop
+    # If player doesn't have minimum chips to bet, break out of the loop
     if chip.total == 0:
         print("Sorry, you don't have enough chips to play another round")
         print('\n')
@@ -287,8 +288,6 @@ while True:
         continue
     else:
         break
-
-
 
 
 
